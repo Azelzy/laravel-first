@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>beranda</title>
+    <title>Beranda | Brutalist Design</title>
+    <link rel="stylesheet" href="/css/brutalist.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>halo</h1>
-    <p>Selamat datang di halaman beranda!</p>
-    <p>Untuk melihat profil, silakan klik <a href="/profil">di sini</a>.</p>
-    <p>Untuk menghubungi, silakan klik <a href="/kontak">di sini</a>.</p>
-    
+    <div class="container fade-in">
+        <h1 class="glitch-text">SELAMAT DATANG</h1>
+        
+        <div class="info-block">
+            <p>SELAMAT DATANG</p>
+        </div>
+
+        <nav class="nav-links">
+            <a href="/profil" class="btn">Lihat Profil</a>
+            <a href="/kontak" class="btn">Hubungi Kami</a>
+        </nav>
+    </div>
+    <script src="/js/brutalist.js"></script>
 </body>
 </html>

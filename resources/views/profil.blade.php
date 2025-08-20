@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Profil</title>
+    <meta charset="UTF-8">
+    <title>Profil | Brutalist Design</title>
+    <link rel="stylesheet" href="/css/brutalist.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <h1>Profil Siswa</h1>
+    <div class="container fade-in">
+        <h1 class="glitch-text">PROFIL AKUH</h1>
 
+        <div class="info-block">
+            <p><strong>Nama:</strong> {{ $nama }}</p>
+            <p><strong>Kelas:</strong> {{ $kelas }}</p>
+            <p><strong>Sekolah:</strong> {{ $sekolah }}</p>
+        </div>
 
-  <p>Nama: {{ $nama }}</p>
-  <p>Kelas: {{ $kelas }}</p>
-  <p>sekolah: {{ $sekolah }}</p>
-
-
-  <a href="/">Kembali ke Beranda</a>
+        <a href="/" class="btn">Kembali ke Beranda</a>
+    </div>
+    <script src="/js/brutalist.js"></script>
 </body>
-
 </html>

@@ -15,7 +15,7 @@ class ProfilController extends Controller
 public function profil()
 {
     $data = [
-        'nama'    => 'Budi Sanjaya', // ganti dengan nama kamu
+        'nama'    => 'AZKA EL FACHRIZY', // ganti dengan nama kamu
         'kelas'   => 'XI PPLG 1',    // ganti kelas kamu
         'sekolah' => 'SMK Bisa Hebat',
     ];
@@ -25,7 +25,14 @@ public function profil()
 
 public function kontak()
 {
-    return view('kontak');
+    $data = [
+        'email'    => 'azkaelfachrizy@gmail.com', // ganti dengan nama kamu
+        'nomorhp'   => '085741505808',    // ganti kelas kamu
+        'github' => 'github.com/azelzy', 
+        'instagram' => 'instagram.com/azelzy',
+    ];
+
+    return view('kontak', $data);
 }
 
 }
