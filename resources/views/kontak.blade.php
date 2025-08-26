@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <title>Kontak | Brutalist Design</title>
@@ -12,7 +12,7 @@
 
         <div class="info-block">
             <p><strong>E-mail:</strong> {{$email}}</p>
-            <p><strong>No Hp</strong> {{$nomorhp }}</p>
+            <p><strong>No.Hp:</strong> {{$nomorhp }}</p>
             <p><strong>Github:</strong> {{ $github }}</p>
             <p><strong>Instagram:</strong> {{ $instagram }}</p>
         </div>
