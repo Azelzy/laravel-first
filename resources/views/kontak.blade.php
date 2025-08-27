@@ -2,8 +2,8 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Kontak | GWE</title>
-    <link rel="stylesheet" href="/resources/css/app.css">
+    <title>Kontak | Brutalist Design</title>
+    <link rel="stylesheet" href="/css/brutalist.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
