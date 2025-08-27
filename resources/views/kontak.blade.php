@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Kontak | Brutalist Design</title>
+    <title>Kontak | GWE</title>
     <link rel="stylesheet" href="/css/brutalist.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -17,7 +17,7 @@
             <p><strong>Instagram:</strong> {{ $instagram }}</p>
         </div>
 
-        <a href="/" class="btn">Kembali ke Beranda</a>
+        <a href="/" class="btn">BACK</a>
     </div>
     <script src="/js/brutalist.js"></script>
 </body>
