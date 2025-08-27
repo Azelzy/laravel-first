@@ -34,5 +34,9 @@ public function kontak()
 
     return view('kontak', $data);
 }
+public function home()
+    {
+        return view('home'); // Ensure the 'home' view exists in the resources/views folder
+    }
 
 }

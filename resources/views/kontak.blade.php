@@ -2,8 +2,8 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>Kontak | Brutalist Design</title>
-    <link rel="stylesheet" href="/css/brutalist.css">
+    <title>Kontak | GWE</title>
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -19,6 +19,6 @@
 
         <a href="/" class="btn">BACK</a>
     </div>
-    <script src="/resources/js/app.js"></script>
+    <script src="/js/scipt.js"></script>
 </body>
 </html>
