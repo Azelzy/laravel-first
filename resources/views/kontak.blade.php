@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Kontak | GWE</title>
-    <link rel="stylesheet" href="/css/brutalist.css">
+    <link rel="stylesheet" href="/resources/css/app.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -19,6 +19,6 @@
 
         <a href="/" class="btn">BACK</a>
     </div>
-    <script src="/js/brutalist.js"></script>
+    <script src="/resources/js/app.js"></script>
 </body>
 </html>
