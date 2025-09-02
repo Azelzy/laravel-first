@@ -1,8 +1,4 @@
 <x-layout>
-"ini home" 
-<nav class="nav-links">
-            <a href="/profil" class="btn">TENGOK SAYA</a>
-            <a href="/kontak" class="btn">KONTAK SAYA</a>
-            <a href="/home" class="btn">hom</a>
-        </nav>
+    <h3 class="text-xl font-bold">Ini adalah halaman Home</h3>
+    <p class="mt-2 text-gray-600">Selamat datang di halaman utama website ini.</p>
 </x-layout>

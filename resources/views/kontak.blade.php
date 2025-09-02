@@ -1,24 +1,17 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!-- <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Kontak | GWE</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Kontak</title>
 </head>
 <body>
-    <div class="container fade-in">
-        <h1 class="glitch-text">KONTAK</h1>
 
-        <div class="info-block">
-            <p><strong>E-mail:</strong> {{$email}}</p>
-            <p><strong>No.Hp:</strong> {{$nomorhp }}</p>
-            <p><strong>Github:</strong> {{ $github }}</p>
-            <p><strong>Instagram:</strong> {{ $instagram }}</p>
-        </div>
-
-        <a href="/" class="btn">BACK</a>
-    </div>
-    <script src="/js/scipt.js"></script>
+  <a href="/">Kembali ke Beranda</a>
 </body>
-</html>
+</html> -->
+<x-layout>
+    <h1>Kontak</h1>
+    <p>Email: azkaelfachrizy@gmail.com</p>
+    <p>Github: github.com/azelzy</p>
+    <p>Instagram: azelzy</p>
+</x-layout>

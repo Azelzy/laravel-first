@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!-- <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Profil | GWE</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Profil</title>
+      <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
-<body>
-    <div class="container fade-in">
-        <h1 class="glitch-text">PROFIL AKUH</h1>
+<body class = card>
 
-        <div class="info-block">
-            <p><strong>Nama:</strong> {{ $nama }}</p>
-            <p><strong>Kelas:</strong> {{ $kelas }}</p>
-            <p><strong>Sekolah:</strong> {{ $sekolah }}</p>
-        </div>
-
-        <a href="/" class="btn">BACK</a>
-    </div>
-    <script src="/js/scipt.js"></script>
 </body>
-</html>
+</html> -->
+<x-layout>
+        <h1>Profil Diri</h1>
+    <p>Nama: {{ $nama ?? 'Azka El Fachrizy' }}</p>
+    <p>Kelas: {{ $kelas ?? 'XI PPLG 1' }}</p>
+    <p>Sekolah: {{ $sekolah ?? 'SMK RADEN UMAR SAID' }}</p>
+</x-layout>
+
