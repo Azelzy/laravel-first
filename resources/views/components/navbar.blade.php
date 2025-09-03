@@ -16,22 +16,20 @@
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- <a href="{{ route('home') }}"
                 class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+              
                 Home -->
-              <a href="/home"
-                aria-current="page"
-                class="{{ request()->is('home') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">
+              <x-nav-link href="/home" :active="request()->is('home')">
                 Home
-              </a>
+              </x-nav-link>
 
-              <a href="/profil"
-                class="{{ request()->is('profil') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">
+              <x-nav-link href="/profil" :active="request()->is('profil')">
                 Profil
-              </a>
+              </x-nav-link>
 
-              <a href="/kontak"
-                class="{{ request()->is('kontak') ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">
+              <x-nav-link href="/kontak" :active="request()->is('kontak')">
                 Kontak
-              </a>
+              </x-nav-link>
+
 
             </div>
           </div>
