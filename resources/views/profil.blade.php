@@ -9,7 +9,7 @@
 </body>
 </html> -->
 <x-layout>
-        <h1>Profil Diri</h1>
+ <h3 class="text-xl font-bold">Ini adalah halaman profil</h3>
     <p>Nama: {{ $nama ?? 'Azka El Fachrizy' }}</p>
     <p>Kelas: {{ $kelas ?? 'XI PPLG 1' }}</p>
     <p>Sekolah: {{ $sekolah ?? 'SMK RADEN UMAR SAID' }}</p>

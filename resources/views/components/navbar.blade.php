@@ -16,15 +16,15 @@
             <div class="ml-10 flex items-baseline space-x-4">
               <a href="{{ route('home') }}"
                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                 Dashboard
+                 Home
               </a>
               <a href="{{ route('kontak') }}"
                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                 Contact
+                 Kontak
               </a>
               <a href="{{ route('profil') }}"
                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-                 Profile
+                 Profil
               </a>
             </div>
           </div>

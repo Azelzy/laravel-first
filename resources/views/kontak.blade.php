@@ -10,7 +10,7 @@
 </body>
 </html> -->
 <x-layout>
-    <h1>Kontak</h1>
+  <h3 class="text-xl font-bold">Ini adalah halaman kontak</h3>
     <p>Email: azkaelfachrizy@gmail.com</p>
     <p>Github: github.com/azelzy</p>
     <p>Instagram: azelzy</p>
