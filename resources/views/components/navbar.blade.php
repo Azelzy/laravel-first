@@ -8,7 +8,7 @@
           <!-- Logo -->
           <div class="shrink-0">
             <img class="h-8 w-8"
-                 src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                 src="https://i.pinimg.com/736x/08/4a/1b/084a1b371443d4a5c96e1db3730d6fd8.jpg"
                  alt="Your Company">
           </div>
           <!-- Menu -->
