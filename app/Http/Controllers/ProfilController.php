@@ -8,16 +8,22 @@ class ProfilController extends Controller
 {
     public function index()
     {
-        return view('home');   // resources/views/home.blade.php
+        return view('home', [
+            'title' => 'Home'
+        ]);   // resources/views/home.blade.php
     }
 
     public function profil()
     {
-        return view('profil'); // resources/views/profil.blade.php
+        return view('profil',[
+            'title' => 'Profil'
+        ]); // resources/views/profil.blade.php
     }
 
     public function kontak()
     {
-        return view('kontak'); // resources/views/kontak.blade.php
+        return view('kontak',[
+            'title' => 'Kontak'
+        ]); // resources/views/kontak.blade.php
     }
 }

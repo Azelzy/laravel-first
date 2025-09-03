@@ -9,6 +9,7 @@
 </body>
 </html> -->
 <x-layout>
+  <x-slot:judul>{{$title}}</x-slot:judul>
  <h3 class="text-xl font-bold">Ini adalah halaman profil</h3>
     <p class="mt-2 text-gray-600">Nama: {{ $nama ?? 'Azka El Fachrizy' }}</p>
     <p class="mt-2 text-gray-600">Kelas: {{ $kelas ?? 'XI PPLG 1' }}</p>

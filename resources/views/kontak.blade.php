@@ -10,6 +10,7 @@
 </body>
 </html> -->
 <x-layout>
+  <x-slot:judul>{{$title}}</x-slot:judul>
   <h3 class="text-xl font-bold">Ini adalah halaman kontak</h3>
     <p class="mt-2 text-gray-600">Email: azkaelfachrizy@gmail.com</p>
     <p class="mt-2 text-gray-600">Github: github.com/azelzy</p>

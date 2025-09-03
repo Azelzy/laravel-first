@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       @vite('resources/css/app.css')
-    <title>Document</title>
+    <title>BELAJAR TAILWIND DAN LARAVEL</title>
 </head>
 <body>
     <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
@@ -19,7 +19,7 @@
 -->
 <div class="min-h-full">
     <x-navbar></x-navbar>
-    <x-header></x-header>
+    <x-header>{{$judul}}</x-header>
 
 
   <main>
