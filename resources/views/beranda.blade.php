@@ -10,6 +10,7 @@
   <nav>
     <a href="/profil">Profil</a> |
     <a href="/kontak">Kontak</a>
+    <a href="/student">Student</a>
   </nav>
 </body>
 </html>

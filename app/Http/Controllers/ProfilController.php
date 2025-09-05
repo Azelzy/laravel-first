@@ -26,4 +26,11 @@ class ProfilController extends Controller
             'title' => 'Kontak'
         ]); // resources/views/kontak.blade.php
     }
+
+    public function student()
+    {
+        return view('student',[
+            'title' => 'Student'
+        ]); // resources/views/student.blade.php
+    }
 }

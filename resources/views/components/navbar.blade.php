@@ -30,6 +30,10 @@
                 Kontak
               </x-nav-link>
 
+              <x-nav-link href="/student" :active="request()->is('student')">
+                Student
+              </x-nav-link>
+
 
             </div>
           </div>
