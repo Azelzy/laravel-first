@@ -4,6 +4,8 @@
     </x-slot:judul>
 
     <div class="overflow-x-auto">
+        <h1 class="text-2x1 font-bold mb-4">TABEL STUDENT:</h1>
+
         <table class="table-auto w-full border border-gray-300 text-center">
             <thead class="bg-gray-200">
                 <tr>
