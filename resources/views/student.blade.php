@@ -16,36 +16,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="border px-4 py-2">1</td>
-                    <td class="border px-4 py-2">Budi Santoso</td>
-                    <td class="border px-4 py-2">budi@example.com</td>
-                    <td class="border px-4 py-2">Jakarta</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 py-2">2</td>
-                    <td class="border px-4 py-2">Siti Aminah</td>
-                    <td class="border px-4 py-2">siti@example.com</td>
-                    <td class="border px-4 py-2">Bandung</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 py-2">3</td>
-                    <td class="border px-4 py-2">Andi Prasetyo</td>
-                    <td class="border px-4 py-2">andi@example.com</td>
-                    <td class="border px-4 py-2">Surabaya</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 py-2">4</td>
-                    <td class="border px-4 py-2">Dewi Lestari</td>
-                    <td class="border px-4 py-2">dewi@example.com</td>
-                    <td class="border px-4 py-2">Yogyakarta</td>
-                </tr>
-                <tr>
-                    <td class="border px-4 py-2">5</td>
-                    <td class="border px-4 py-2">Rizky Hidayat</td>
-                    <td class="border px-4 py-2">rizky@example.com</td>
-                    <td class="border px-4 py-2">Medan</td>
-                </tr>
+                @foreach ($students as $student)
+                    <tr class="odd:bg-white even:bg-gray-50 hover:bg-gray-100 transition">
+                    <td class="px-6 py-4 font-medium text-gray-700">{{$loop->iteration}}</td>
+                    <td class="px-6 py-4">{{$student["name"]}}</td>
+                    <td class="px-6 py-4 text-gray-600">{{$student["email"]}}</td>  
+                    <td class="px-6 py-4 text-gray-600">{{$student["address"]}}</td>  
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
