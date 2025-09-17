@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -11,39 +12,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = [
-            [
-                'id' => 1,
-                'name' => 'agus',
-                'email' => 'agusemail',
-                'address' => 'kudus',
-            ],
-            [
-                'id' => 2,
-                'name' => 'agus2',
-                'email' => 'agusemail2',
-                'address' => 'kudus2',
-            ],
-            [
-                'id' => 3,
-                'name' => 'agus3',
-                'email' => 'agusemail3',
-                'address' => 'kudus3',
-            ],
-            [
-                'id' => 4,
-                'name' => 'agus4',
-                'email' => 'agusemail4',
-                'address' => 'kudus4',
-            ],
-            [
-                'id' => 5,
-                'name' => 'agus4',
-                'email' => 'agusemail4',
-                'address' => 'kudus4',
-            ],
-        
-        ];
+        $students = Student::all();
         return view('student', [
             'title' => 'Student',
             'students' => $students
