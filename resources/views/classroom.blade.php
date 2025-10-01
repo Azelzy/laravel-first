@@ -1,23 +1,63 @@
 <x-layout>
-    <div class="container mx-auto p-4">
-        <h1 class="text-2xl font-bold mb-4">Classrooms</h1>
-        <div class="bg-white shadow-md rounded p-4">
-            <table class="min-w-full">
-                <thead>
-                    <tr>
-                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">ID</th>
-                        <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($classrooms as $classroom)
-                        <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">{{ $classroom->id }}</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">{{ $classroom->name }}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+    <x-slot:judul>
+        {{ $title }}
+    </x-slot:judul>
+
+    <div class="container mx-auto p-6">
+        <div class="bg-[#FF9013] px-6 py-3 mb-6 inline-block shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)]">
+            <h1 class="text-2xl font-bold text-[#F5F1DC]">CLASSROOMS</h1>
         </div>
-    </div>
+
+
+        <div class="bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(115,200,210,1)] overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="min-w-full border-collapse border-2 border-black">
+                    <thead>
+                        <tr class="bg-[#F5F1DC] border-b-2 border-black">
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-sm font-bold text-gray-900 uppercase tracking-wider border-r-2 border-black">
+                                ID</th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-sm font-bold text-gray-900 uppercase tracking-wider border-r-2 border-black">
+                                Name</th>
+                            <th scope="col"
+                                class="px-6 py-3 text-left text-sm font-bold text-gray-900 uppercase tracking-wider">
+                                Student list</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($classrooms as $classroom)
+                            <tr
+                                class="odd:bg-white even:bg-gray-100 border-b-2 border-black hover:bg-[#F5F1DC] transition-colors">
+                                <td class="px-6 py-4 font-bold text-gray-900 border-r-2 border-black">
+                                    {{ $classroom->id }}
+                                </td>
+                                <td class="px-6 py-4 text-gray-700 border-r-2 border-black">
+                                    {{ $classroom->name }}
+                                </td>
+                                <td class="px-6 py-4 font-semibold text-gray-900">
+                                    @if ($classroom->students->isEmpty())
+                                        <span class="text-gray-500 italic">No students</span>
+                                    @else
+                                        <ul class="list-disc list-inside">
+                                            @foreach ($classroom->students as $student)
+                                                <li>{{ $student->name }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="3"
+                                    class="px-6 py-4 text-center text-gray-500 italic border-t-2 border-black">
+                                    No classrooms available
+                                </td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
 </x-layout>

@@ -6,7 +6,6 @@ use App\Models\Student;
 use App\Models\User;
 use App\Models\Guardian;
 use App\Models\Classroom;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,14 +15,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-      
-        //Student::factory(10)->create();
+        // Buat 4 classroom terlebih dahulu
+        Classroom::factory(4)->create();
+
+        // Buat 10 student dengan classroom_id random dari classroom yang sudah dibuat
+        Student::factory(10)->create([
+            'classroom_id' => function() {
+                return Classroom::inRandomOrder()->first()->id;
+            }
+        ]);
+
+        // Buat guardian untuk setiap student
         Guardian::factory(10)->create();
-            
+
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
-    Classroom::factory(count: 4)->hasStudents(count: 4)->create();
     }
 }
