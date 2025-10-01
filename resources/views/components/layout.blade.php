@@ -19,7 +19,7 @@
 -->
 <div class="min-h-full">
     <x-navbar></x-navbar>
-    <x-header>{{$judul}}</x-header>
+    <x-header>{{ $judul ?? 'Welcome' }}</x-header>
 
 
   <main>

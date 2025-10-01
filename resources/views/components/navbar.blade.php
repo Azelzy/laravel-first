@@ -34,6 +34,9 @@
                 Student
               </x-nav-link>
 
+              <x-nav-link href="/guardians" :active="request()->is('guardians')">
+                Guardians
+              </x-nav-link>
 
             </div>
           </div>
