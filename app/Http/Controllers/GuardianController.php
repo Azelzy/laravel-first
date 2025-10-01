@@ -10,7 +10,10 @@ class GuardianController extends Controller
     public function index()
     {
         $guardians = Guardian::all();
-        return view('guardians', ['guardians' => $guardians]);
+        return view('guardians', [
+            'guardians' => $guardians,
+            'title' => 'Data Guardian'
+        ]);
     }
     /**
      * Show the form for creating a new resource.

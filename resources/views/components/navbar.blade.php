@@ -38,6 +38,10 @@
                 Guardians
               </x-nav-link>
 
+              <x-nav-link href="/classroom" :active="request()->is('classroom')">
+                Classroom
+              </x-nav-link>
+
             </div>
           </div>
         </div>
