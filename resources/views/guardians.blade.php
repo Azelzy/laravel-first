@@ -39,7 +39,7 @@
         
         <div class="mt-6 flex justify-end">
             <div class="bg-[#FF9013] px-5 py-2 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,0.25)]">
-                <span class="text-[#F5F1DC] font-semibold text-sm">Total Guardians: {{ count($guardians) }}</span>
+                <span class="text-[#000000] font-semibold text-sm">Total Guardians: {{ count($guardians) }}</span>
             </div>
         </div>
     </div>
