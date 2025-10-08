@@ -32,7 +32,7 @@
         <footer class="mt-12 border-t-4 border-[#FF9013] bg-[#F5F1DC]">
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                 <div class="text-center">
-                    <div class="inline-block bg-black px-4 py-2 shadow-[3px_3px_0px_0px_rgba(255,144,19,1)]">
+                    <div class="inline-block bg-[#73C8D2] px-4 py-2 shadow-[3px_3px_0px_0px_rgba(0,0,0,0.25)]">
                         <p class="text-[#F5F1DC] font-bold text-sm">*ੈ✩༺𝓗𝓮𝓵𝓵𝓸༻*ੈ✩ </p>
                     </div>
                 </div>

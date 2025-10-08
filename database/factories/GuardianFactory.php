@@ -19,7 +19,7 @@ class GuardianFactory extends Factory
         return [
             'name'   => $this->faker->name(),
             'job'    => $this->faker->jobTitle(),
-            'phone'  => $this->faker->phoneNumber(),
+            'phone' => $this->faker->numerify('08#########'),
             'email'  => $this->faker->unique()->safeEmail(),
             'address'=> $this->faker->address(),
         ];

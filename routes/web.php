@@ -15,4 +15,5 @@ Route::get('/kontak', [ContactController::class, 'kontak'])->name('kontak');
 Route::get('/student', [StudentController::class, 'index']);
 Route::get('/guardians', [GuardianController::class, 'index'])->name('guardians');
 Route::get('/classroom', [ClassroomController::class, 'index'])->name('classroom');
-
+Route::get('/teachers', [App\Http\Controllers\TeacherController::class, 'index'])->name('teachers');
+Route::get('/subjects', [App\Http\Controllers\SubjectController::class, 'index'])->name('subjects');

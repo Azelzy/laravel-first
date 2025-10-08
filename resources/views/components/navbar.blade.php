@@ -35,6 +35,15 @@
               <x-nav-link href="/classroom" :active="request()->is('classroom')">
                 CLASSROOMS
               </x-nav-link>
+
+              <x-nav-link href="/teachers" :active="request()->is('teachers')">
+                TEACHERS
+              </x-nav-link>
+
+              <x-nav-link href="/subjects" :active="request()->is('subjects')">
+                SUBJECTS
+              </x-nav-link>
+              
             </div>
           </div>
         </div>

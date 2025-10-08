@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
 
         // Buat 10 student dengan classroom_id random dari classroom yang sudah dibuat
         Student::factory(10)->create([
-            'classroom_id' => function() {
+            'classroom_id' => function () {
                 return Classroom::inRandomOrder()->first()->id;
             }
         ]);
@@ -28,9 +28,15 @@ class DatabaseSeeder extends Seeder
         // Buat guardian untuk setiap student
         Guardian::factory(10)->create();
 
+        // Create subjects first
+        \App\Models\Subject::factory(5)->create();
+
+        // Create teachers and associate with subjects
+        \App\Models\Teacher::factory(5)->create();
+
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+        }
     }
-}
