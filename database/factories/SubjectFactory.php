@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Subject;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,20 +15,25 @@ class SubjectFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array
-{
-    $subjects = [
-        ['name' => 'Matematika', 'description' => 'Algoritma dan kawankawan'],
-        ['name' => 'Bahasa Jepang', 'description' => 'ohayo'],
-        ['name' => 'Bahasa Inggris', 'description' => 'Bahasa inggris'],
-        ['name' => 'Mobile dev', 'description' => 'flutter dan java'],
-        ['name' => 'Web dev', 'description' => 'laravel dan react'],
-    ];
-    
-    static $index = 0;
-    $subject = $subjects[$index % count($subjects)];
-    $index++;
-    
-    return $subject;
-}
-}
+    {
 
+        $subjectName = fake()->unique()->randomElement(['Web Dev', 'Game Dev', 'Mobile Dev', 'PKK', 'Mathematika']);
+
+
+        $description = match ($subjectName) {
+            'Web Dev' => 'pelajaran web dev',
+            'Game Dev' => 'gemdev',
+            'Mobile Dev' => 'fluter',
+            'PKK' => 'basis data',
+            'bahasa jepang' => 'ohayo',
+            'bahasa inggris' => 'good morning',
+            'bahasa jerman' => 'guten tag',
+            'Mathematika' => 'tata letak koordinat',
+        };
+
+        return [
+            'name' => $subjectName,
+            'description' => $description,
+        ];
+    }
+}
