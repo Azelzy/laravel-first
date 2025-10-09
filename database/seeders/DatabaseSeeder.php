@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
         Guardian::factory(10)->create();
 
         // Create subjects first
-        \App\Models\Subject::factory(5)->create();
+        \App\Models\Subject::factory(8)->create();
+        
 
         // Create teachers and associate with subjects
         \App\Models\Teacher::factory(5)->create();
