@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Classroom;
+use App\Models\Guardian;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,10 +20,12 @@ class StudentFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'birth_date' => $this->faker->date('Y-m-d'),
+            'birth_date' => $this->faker->date('Y-m-d', '-10 years'),
             'email' => $this->faker->unique()->safeEmail(),
-            'address' => $this->faker->city(),
-            'classroom_id' => Classroom:: factory(),
+            'gender' => $this->faker->randomElement(['L', 'P']),
+            'address' => $this->faker->address(),
+            'classroom_id' => Classroom::factory(),
+            'guardian_id' => Guardian::factory(),
         ];
     }
 }
