@@ -12,7 +12,7 @@
                 <span class="sr-only">Toggle sidebar</span>
             </button>
             <a href="/dashboard" class="flex items-center justify-between mr-4">
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Admin Panel</span>
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Panel konterol Atmin</span>
             </a>
         </div>
         <div class="flex items-center lg:order-2">
@@ -23,12 +23,12 @@
                 aria-expanded="false"
                 data-dropdown-toggle="dropdown">
                 <span class="sr-only">Open user menu</span>
-                <img class="w-8 h-8 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png" alt="user photo"/>
+                <img class="w-8 h-8 rounded-full" src="https://avatars.githubusercontent.com/u/107330423?v=4" alt="user photo"/>
             </button>
             <!-- Dropdown menu -->
             <div class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown">
                 <div class="py-3 px-4">
-                    <span class="block text-sm font-semibold text-gray-900 dark:text-white">Admin User</span>
+                    <span class="block text-sm font-semibold text-gray-900 dark:text-white">Akuh</span>
                     <span class="block text-sm text-gray-900 truncate dark:text-white">admin@example.com</span>
                 </div>
                 <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">

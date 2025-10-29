@@ -1,8 +1,8 @@
 <x-admin.layout>
-    <x-slot:title>Admin Dashboard</x-slot:title>
+    <x-slot:title>Dasbort Atmin</x-slot:title>
 
     <div class="mb-4">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Dashboard Overview</h2>
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">ini dashboard</h2>
     </div>
 
     <!-- Stats Cards -->
