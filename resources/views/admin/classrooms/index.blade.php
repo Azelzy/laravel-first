@@ -1,13 +1,10 @@
 <x-admin.layout>
-    <x-slot:title>Classrooms Management</x-slot:title>
+    <x-slot:title>CLASSROOMS CONTROL PANEL</x-slot:title>
 
     <div class="mb-4 flex justify-between items-center">
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Classrooms List</h2>
         <a href="/admin/classrooms/create" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-            <svg class="w-4 h-4 inline mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
-            </svg>
-            Add Classroom
+            +  Add Classroom
         </a>
     </div>
 
