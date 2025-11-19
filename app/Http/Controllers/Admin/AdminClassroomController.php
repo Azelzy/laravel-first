@@ -10,7 +10,7 @@ class AdminClassroomController extends Controller
 {
     public function index()
     {
-        $classrooms = Classroom::withCount('students')->get();
+        $classrooms = Classroom::withCount('students')->ordered()->get();
         return view('admin.classrooms.index', compact('classrooms'));
     }
 
