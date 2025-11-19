@@ -6,6 +6,7 @@ A modern school management system built with Laravel 11 and Tailwind CSS featuri
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white)
 
+=======USER PAGE========
 ![](ss1.png)
 ![](ss2.png)
 ![](ss3.png)
@@ -14,6 +15,8 @@ A modern school management system built with Laravel 11 and Tailwind CSS featuri
 ![](ss6.png)
 ![](ss7.png)
 ![](ss8.png)
+=======ADMIN PAGE========
+![](ssadmin.png)
 
 
 ## ✨ Features
