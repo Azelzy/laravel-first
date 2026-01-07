@@ -15,6 +15,27 @@ class AdminTeacherController extends Controller
         return view('admin.teachers.index', compact('teachers'));
     }
 
+    //  public function index(Request $request)
+    // {
+    //     $search = $request->search;
+    //     $teachers = Teacher::with('subject')
+    //     ->when($search, function($query) use ($search){
+    //         $query->where('name', 'like', "%{$search}%")
+    //         ->orWhere('email', 'like', "%{$search}%")
+    //         ->orWhereHas('subject', function($q) use ($search) {
+    //             $q->where('name', 'like', "%{$search}%");
+    //         });
+    //     })
+    //     ->paginate(10)
+    //     ->withQueryString();
+    //     $subjects = Subject::all();
+
+    //     return view ('admin.teacher.index', [
+    //         'teachers' => $teachers,
+    //         'subjects' => $subjects,
+    //         'title' => 'Data Guru'
+    //     ]);
+    // }
     public function create()
     {
         $subjects = Subject::all();
