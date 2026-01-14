@@ -15,21 +15,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Buat classrooms terlebih dahulu
-        Classroom::factory(4)->create();
+        // Jalankan ClassroomSeeder untuk membuat 36 classrooms
+        $this->call(ClassroomSeeder::class);
 
-        // Buat guardians
-        Guardian::factory(10)->create();
+        // Buat guardians (36 classrooms × 35 students average = 1260 students, buat guardians yang cukup)
+        Guardian::factory(1300)->create();
 
-        // Buat students dengan classroom_id dan guardian_id
-        Student::factory(10)->create([
-            'classroom_id' => function () {
-                return Classroom::inRandomOrder()->first()->id;
-            },
-            'guardian_id' => function () {
-                return Guardian::inRandomOrder()->first()->id;
-            }
-        ]);
+        // Buat students per classroom dengan jumlah 30-40 per kelas
+        $classrooms = Classroom::all();
+        
+        foreach ($classrooms as $classroom) {
+            $studentCount = rand(30, 40);
+            Student::factory($studentCount)->create([
+                'classroom_id' => $classroom->id,
+                'guardian_id' => function () {
+                    return Guardian::inRandomOrder()->first()->id;
+                }
+            ]);
+        }
 
         // Create subjects
         \App\Models\Subject::factory(8)->create();

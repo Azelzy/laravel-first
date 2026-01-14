@@ -12,6 +12,17 @@ class ClassroomSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Classroom::factory(4)->create();
+        $grades = ['10', '11', '12'];
+        $majors = ['PPLG', 'Animasi', 'DKV'];
+        
+        foreach ($grades as $grade) {
+            foreach ($majors as $major) {
+                for ($i = 1; $i <= 4; $i++) {
+                    \App\Models\Classroom::create([
+                        'name' => "{$grade} {$major} {$i}"
+                    ]);
+                }
+            }
+        }
     }
 }

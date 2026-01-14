@@ -1,26 +1,24 @@
 <?php
 
-namespace App\Models;
+namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\Classroom;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-class Classroom extends Model
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Classroom>
+ */
+class ClassroomFactory extends Factory
 {
-    /** @use HasFactory<\Database\Factories\ClassroomFactory> */
-    use HasFactory;
-    
-    protected $table = 'classrooms';
-    protected $fillable = ['name'];
-    
-    // Scope untuk sorting otomatis
-    public function scopeOrdered($query)
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
     {
-        return $query->orderByRaw("CAST(SUBSTRING_INDEX(name, ' ', 1) AS UNSIGNED) ASC, SUBSTRING_INDEX(name, ' ', -1) ASC");
-    }
-    
-    public function students()
-    {
-        return $this->hasMany(Student::class, 'classroom_id');
+        return [
+            'name' => $this->faker->word(),
+        ];
     }
 }
