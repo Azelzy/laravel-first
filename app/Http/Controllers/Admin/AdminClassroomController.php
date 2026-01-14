@@ -8,11 +8,25 @@ use Illuminate\Http\Request;
 
 class AdminClassroomController extends Controller
 {
-    public function index()
-    {
-        $classrooms = Classroom::withCount('students')->ordered()->get();
-        return view('admin.classrooms.index', compact('classrooms'));
-    }
+    // public function index() KODE AWAL
+    // {
+    //     $classrooms = Classroom::withCount('students')->ordered()->get();
+    //     return view('admin.classrooms.index', compact('classrooms'));
+    // }
+
+        public function index(Request $request)
+{
+    $search = $request->search ?? '';
+    $classrooms = Classroom::withCount('students')
+        ->when(trim($search) !== '', function ($query) use ($search) {
+            return $query->where('name', 'like', '%' . $search . '%');
+        })
+        ->ordered()
+        ->paginate(5)
+        ->withQueryString();
+
+    return view('admin.classrooms.index', compact('classrooms', 'search'));
+}
 
     public function create()
     {

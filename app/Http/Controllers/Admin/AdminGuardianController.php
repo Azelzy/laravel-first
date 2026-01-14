@@ -8,11 +8,35 @@ use Illuminate\Http\Request;
 
 class AdminGuardianController extends Controller
 {
-    public function index()
-    {
-        $guardians = Guardian::withCount('students')->get();
-        return view('admin.guardians.index', compact('guardians'));
-    }
+    // public function index() KODE AWAL
+    // {
+    //     $search = request('search');
+    //     $guardians = Guardian::withCount('students')
+    //         ->when($search, function ($query) use ($search) {
+    //             return $query->where('name', 'like', '%' . $search . '%')
+    //                 ->orWhere('email', 'like', '%' . $search . '%')
+    //                 ->orWhere('phone', 'like', '%' . $search . '%');
+    //         })
+    //         ->get();
+    //     return view('admin.guardians.index', compact('guardians', 'search'));
+    // }
+
+        public function index(Request $request)
+{
+    $search = $request->search ?? '';
+    $guardians = Guardian::withCount('students')
+        ->when(trim($search) !== '', function ($query) use ($search) {
+            return $query->where('name', 'like', '%' . $search . '%')
+                ->orWhere('email', 'like', '%' . $search . '%')
+                ->orWhere('phone', 'like', '%' . $search . '%')
+                ->orWhere('job', 'like', '%' . $search . '%')
+                ->orWhere('address', 'like', '%' . $search . '%');
+        })
+        ->paginate(5)
+        ->withQueryString();
+
+    return view('admin.guardians.index', compact('guardians', 'search'));
+}
 
     public function create()
     {

@@ -12,7 +12,7 @@
                 <span class="sr-only">Toggle sidebar</span>
             </button>
             <a href="/dashboard" class="flex items-center justify-between mr-4">
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">ADMIN CONTROL PANEL</span>
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">CONTROL PANEL</span>
             </a>
         </div>
         <div class="flex items-center lg:order-2">

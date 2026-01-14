@@ -10,11 +10,38 @@ use Illuminate\Http\Request;
 
 class AdminStudentController extends Controller
 {
-    public function index()
-    {
-        $students = Student::with(['classroom', 'guardian'])->get();
-        return view('admin.students.index', compact('students'));
-    }
+    // public function index() KODE AWAL
+    // {
+    //     $search = request('search');
+    //     $students = Student::with(['classroom', 'guardian'])
+    //         ->when($search, function ($query) use ($search) {
+    //             return $query->where('name', 'like', '%' . $search . '%')
+    //                 ->orWhere('email', 'like', '%' . $search . '%');
+    //         })
+    //         ->get();
+    //     return view('admin.students.index', compact('students', 'search'));
+    // }
+
+        public function index(Request $request)
+{
+    $search = $request->search ?? '';
+    $students = Student::with(['classroom', 'guardian'])
+        ->when(trim($search) !== '', function ($query) use ($search) {
+            return $query->where('name', 'like', '%' . $search . '%')
+                ->orWhere('email', 'like', '%' . $search . '%')
+                ->orWhere('address', 'like', '%' . $search . '%')
+                ->orWhereHas('classroom', function ($q) use ($search) {
+                    $q->where('name', 'like', '%' . $search . '%');
+                })
+                ->orWhereHas('guardian', function ($q) use ($search) {
+                    $q->where('name', 'like', '%' . $search . '%');
+                });
+        })
+        ->paginate(5)
+        ->withQueryString();
+
+    return view('admin.students.index', compact('students', 'search'));
+}
 
     public function create()
     {
