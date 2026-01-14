@@ -43,6 +43,30 @@ class AdminStudentController extends Controller
     return view('admin.students.index', compact('students', 'search'));
 }
 
+    //  public function index(Request $request)
+    // {
+    
+    //     $search = $request->search;
+    //     $students = Student::with('classroom')
+    //     ->when($search, function($query) use ($search){
+    //         $query->where('name', 'like', "%{$search}%")
+    //         ->orWhere('email', 'like', "%{$search}%")
+    //         ->orWhereHas('classroom', function($q) use ($search) {
+    //             $q->where('name', 'like', "%{$search}%");
+    //         });
+    //     })
+    //     ->paginate(10)
+    //     ->withQueryString();
+    //     // $students = Student::paginate(10);
+    //     $classrooms = Classroom::all();
+
+    //     return view ('admin.student.index', [
+    //         'students' => $students,
+    //         'classrooms' => $classrooms,
+    //         'title' => 'Data Siswa'
+    //     ]);
+    // }
+
     public function create()
     {
         $classrooms = Classroom::all();
