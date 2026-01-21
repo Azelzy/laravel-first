@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Guardian;
 use App\Models\Classroom;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,6 +16,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('admin123'),
+        ]);
+
         // Jalankan ClassroomSeeder untuk membuat 36 classrooms
         $this->call(ClassroomSeeder::class);
 

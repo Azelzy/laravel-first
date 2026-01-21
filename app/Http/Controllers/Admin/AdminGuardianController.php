@@ -32,7 +32,7 @@ class AdminGuardianController extends Controller
                 ->orWhere('job', 'like', '%' . $search . '%')
                 ->orWhere('address', 'like', '%' . $search . '%');
         })
-        ->paginate(5)
+        ->paginate(20)
         ->withQueryString();
 
     return view('admin.guardians.index', compact('guardians', 'search'));

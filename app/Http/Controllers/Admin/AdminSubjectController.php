@@ -28,7 +28,7 @@ class AdminSubjectController extends Controller
             return $query->where('name', 'like', '%' . $search . '%')
                 ->orWhere('description', 'like', '%' . $search . '%');
         })
-        ->paginate(5)
+        ->paginate(20)
         ->withQueryString();
 
     return view('admin.subjects.index', compact('subjects', 'search'));

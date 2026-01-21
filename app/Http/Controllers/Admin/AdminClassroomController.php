@@ -22,7 +22,7 @@ class AdminClassroomController extends Controller
             return $query->where('name', 'like', '%' . $search . '%');
         })
         ->ordered()
-        ->paginate(5)
+        ->paginate(20)
         ->withQueryString();
 
     return view('admin.classrooms.index', compact('classrooms', 'search'));

@@ -37,7 +37,7 @@ class AdminStudentController extends Controller
                     $q->where('name', 'like', '%' . $search . '%');
                 });
         })
-        ->paginate(5)
+        ->paginate(20)
         ->withQueryString();
 
     return view('admin.students.index', compact('students', 'search'));
