@@ -28,20 +28,28 @@
             <!-- Dropdown menu -->
             <div class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown">
                 <div class="py-3 px-4">
-                    <span class="block text-sm font-semibold text-gray-900 dark:text-white">Akuh</span>
-                    <span class="block text-sm text-gray-900 truncate dark:text-white">admin@example.com</span>
+                    <span class="block text-sm font-semibold text-gray-900 dark:text-white">{{ Auth::user()->name }}</span>
+                    <span class="block text-sm text-gray-500 truncate dark:text-gray-400">{{ Auth::user()->email }}</span>
                 </div>
                 <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
                     <li>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">My profile</a>
+                        <a href="/home" class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">View Public Site</a>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Account settings</a>
+                        <a href="/dashboard" class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Dashboard</a>
                     </li>
                 </ul>
                 <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
                     <li>
-                        <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+                        <form action="{{ route('logout') }}" method="POST" class="block">
+                            @csrf
+                            <button type="submit" class="w-full text-left py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-red-600 dark:text-red-400">
+                                <svg class="inline w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                                </svg>
+                                Sign out
+                            </button>
+                        </form>
                     </li>
                 </ul>
             </div>

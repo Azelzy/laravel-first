@@ -14,10 +14,14 @@ use App\Http\Controllers\Admin\AdminTeacherController;
 use App\Http\Controllers\Admin\AdminSubjectController;
 use App\Http\Controllers\Auth\AuthController;
 
-// Auth Routes
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('login.process');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+// Auth Routes - Accessible only when not authenticated
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.process');
+});
+
+// Logout Route - Accessible only when authenticated
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
 // Public Routes
 Route::get('/', [HomeController::class, 'index']);
@@ -30,20 +34,19 @@ Route::get('/classroom', [ClassroomController::class, 'index'])->name('classroom
 Route::get('/teachers', [App\Http\Controllers\TeacherController::class, 'index'])->name('teachers');
 Route::get('/subjects', [App\Http\Controllers\SubjectController::class, 'index'])->name('subjects');
 
-// Admin Routes
-Route::prefix('admin')
-    ->middleware(['auth', 'admin'])
-    ->group(function () {
-        // Dashboard
-        Route::get('/dashboard', function () {
-            $totalStudents = \App\Models\Student::count();
-            $totalTeachers = \App\Models\Teacher::count();
-            $totalClassrooms = \App\Models\Classroom::count();
-            $totalSubjects = \App\Models\Subject::count();
+// Admin Routes - Protected with auth middleware
+Route::middleware(['auth'])->group(function () {
+    // Dashboard
+    Route::get('/dashboard', function () {
+        $totalStudents = \App\Models\Student::count();
+        $totalTeachers = \App\Models\Teacher::count();
+        $totalClassrooms = \App\Models\Classroom::count();
+        $totalSubjects = \App\Models\Subject::count();
 
-            return view('admin.dashboard', compact('totalStudents', 'totalTeachers', 'totalClassrooms', 'totalSubjects'));
-        })->name('admin.dashboard');
+        return view('admin.dashboard', compact('totalStudents', 'totalTeachers', 'totalClassrooms', 'totalSubjects'));
+    })->name('admin.dashboard');
 
+    Route::prefix('admin')->name('admin.')->group(function () {
         // Students CRUD
         Route::resource('students', AdminStudentController::class)->except(['show']);
 
@@ -59,8 +62,4 @@ Route::prefix('admin')
         // Subjects CRUD
         Route::resource('subjects', AdminSubjectController::class)->except(['show']);
     });
-
-// Fallback to dashboard if just /dashboard is accessed
-Route::get('/dashboard', function () {
-    return redirect('/admin/dashboard');
 });

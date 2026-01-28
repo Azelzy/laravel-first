@@ -16,10 +16,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Create Admin User dengan password yang di-hash
         User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
-            'password' => Hash::make('admin123'),
+            'password' => Hash::make('admin123'), //hash berfungsi untuk mengamankan password menjadi string acak yang panjang saat mengirim ke database
+            'email_verified_at' => now(),
+        ]);
+
+        // Create Regular User untuk testing
+        User::create([
+            'name' => 'User Test',
+            'email' => 'user@gmail.com',
+            'password' => Hash::make('user123'),
+            'email_verified_at' => now(),
         ]);
 
         // Jalankan ClassroomSeeder untuk membuat 36 classrooms

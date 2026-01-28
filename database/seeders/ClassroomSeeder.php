@@ -15,7 +15,7 @@ class ClassroomSeeder extends Seeder
         $grades = ['10', '11', '12'];
         $majors = ['PPLG', 'Animasi', 'DKV'];
         
-        foreach ($grades as $grade) {
+        foreach ($grades as $grade) { // loop pengurutan kelas
             foreach ($majors as $major) {
                 for ($i = 1; $i <= 4; $i++) {
                     \App\Models\Classroom::create([
